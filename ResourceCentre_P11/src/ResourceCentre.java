@@ -30,11 +30,7 @@ public class ResourceCentre {
 				ResourceCentre.viewAllChromebook(chromebookList);
 
 			} else if (option == OPTION_ADD) {
-				// Add a new item
-				ResourceCentre.setHeader("ADD");			
-				viewMenu();
-				
-				int itemType = Helper.readInt("Enter option to select item type > ");
+				int itemType = AddNewItem();
 
 				if (itemType == 1) {
 					// Add a camcorder
@@ -91,6 +87,18 @@ public class ResourceCentre {
 
 		}
 
+	}
+
+	/**
+	 * @return
+	 */
+	private static int AddNewItem() {
+		// Add a new item
+		ResourceCentre.setHeader("ADD");			
+		viewMenu();
+		
+		int itemType = Helper.readInt("Enter option to select item type > ");
+		return itemType;
 	}
 
 	public static void viewMenu() {
